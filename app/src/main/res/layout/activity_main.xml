@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/tipo"
+        app:layout_constraintBottom_toBottomOf="@+id/spTipo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spTipo" />
+
+    <Spinner
+        android:id="@+id/spTipo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTipo"
+        app:layout_constraintStart_toStartOf="@+id/spDetalhe"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDetalhe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detalhe"
+        app:layout_constraintBottom_toBottomOf="@+id/spDetalhe"
+        app:layout_constraintStart_toStartOf="@+id/tvTipo"
+        app:layout_constraintTop_toTopOf="@+id/spDetalhe" />
+
+    <Spinner
+        android:id="@+id/spDetalhe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvDetalhe"
+        app:layout_constraintTop_toBottomOf="@+id/spTipo" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Valor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spDetalhe"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiDataLanc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Selecione a data"
+        app:endIconDrawable="@android:drawable/ic_menu_my_calendar"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="@+id/tiValor"
+        app:layout_constraintStart_toStartOf="@+id/tiValor"
+        app:layout_constraintTop_toBottomOf="@+id/tiValor"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDataLanc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btLancar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Lançar"
+        app:layout_constraintStart_toStartOf="@+id/tiDataLanc"
+        app:layout_constraintTop_toBottomOf="@+id/tiDataLanc" />
+
+    <Button
+        android:id="@+id/btVerLancamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Ver Lançamentos"
+        app:layout_constraintStart_toStartOf="@+id/btLancar"
+        app:layout_constraintTop_toBottomOf="@+id/btLancar" />
+
+    <Button
+        android:id="@+id/btSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Saldo"
+        app:layout_constraintStart_toStartOf="@+id/btVerLancamentos"
+        app:layout_constraintTop_toBottomOf="@+id/btVerLancamentos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
